@@ -18,7 +18,6 @@ export TF_BUCKET_REGION=${AWS_DEFAULT_REGION}
 # Reinitialize terraform to import state to remote backend
 terraform init \
   -force-copy \
-  -backend="s3"
   -backend-config="encrypt=true" \
   -backend-config="bucket=${TF_BUCKET}" \
   -backend-config="key=tfstate-backend/terraform.tfstate"
