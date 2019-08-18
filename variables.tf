@@ -14,12 +14,6 @@ variable "name" {
   default     = "terraform"
 }
 
-variable "delimiter" {
-  type        = string
-  default     = "-"
-  description = "Delimiter to be used between `namespace`, `stage`, `name` and `attributes`"
-}
-
 variable "attributes" {
   type        = list(string)
   default     = ["state"]

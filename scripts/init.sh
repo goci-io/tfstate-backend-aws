@@ -24,4 +24,4 @@ terraform init \
   -force-copy \
   -backend-config="encrypt=true" \
   -backend-config="bucket=${TF_BUCKET}" \
-  -backend-config="key=tfstate-backend/terraform.tfstate"
+  -backend-config="key=$1"
