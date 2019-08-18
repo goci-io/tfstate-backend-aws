@@ -1,8 +1,11 @@
 mkfile_dir := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
+export TF_STATE_KEY ?= tfstate-backend/terraform.tfstate
+
 ## Initialize the terraform state backend
 init:
-	@aws s3 ls s3://${TF_BUCKET}/tfstate-backend/terraform.tfstate > /dev/null || $(mkfile_dir)/scripts/init.sh
+	@aws s3 ls s3://${TF_BUCKET}/tfstate-backend/terraform.tfstate || \
+		$(mkfile_dir)/scripts/init.sh $(TF_STATE_KEY)
 
 ## Clean up the project
 clean:
