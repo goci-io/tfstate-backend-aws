@@ -8,7 +8,7 @@ rm -rf .terraform terraform.tfstate
 sed -Ei 's/^(\s+backend\s+)/#\1/' main.tf
 
 # Initialize terraform modules and providers
-terraform init
+TF_CLI_ARGS_init='' terraform init
 
 # Provision S3 bucket and dynamodb tables
 terraform apply -auto-approve
