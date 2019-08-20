@@ -1,5 +1,7 @@
 # tfstate-backend-aws
 
+#### Maintained by [@goci-io/prp-terraform](https://github.com/orgs/goci-io/teams/prp-terraform)
+
 This module provides a wrapper around the existing [cloudposse/terraform-aws-tfstate-backend](https://github.com/cloudposse/terraform-aws-tfstate-backend).
 
 It allows you to run this module in a pipeline by running `make init` for example to detect whether the remote state was already created or not.
