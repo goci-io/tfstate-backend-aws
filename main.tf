@@ -3,6 +3,10 @@ terraform {
   backend "s3" {}
 }
 
+provider "aws" {
+  version = var.tf_provider_aws_version
+}
+
 module "tfstate_backend" {
   source        = "git::https://github.com/cloudposse/terraform-aws-tfstate-backend.git?ref=tags/0.9.0"
   namespace     = var.namespace
