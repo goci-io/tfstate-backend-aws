@@ -4,7 +4,7 @@ terraform {
 }
 
 provider "aws" {
-  version = var.tf_provider_aws_version
+  version = "~> 2.25"
 }
 
 module "tfstate_backend" {

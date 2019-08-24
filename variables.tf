@@ -43,9 +43,3 @@ variable "aws_profile" {
   description = "AWS profile name as set in the shared credentials file"
 }
 
-variable "tf_provider_aws_version" {
-  type        = string
-  default     = "~> 2.24"
-  description = "The version for the kubernetes provider"
-}
-
