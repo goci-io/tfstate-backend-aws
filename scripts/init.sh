@@ -11,7 +11,7 @@ sed -Ei 's/^(\s+backend\s+)/#\1/' main.tf
 TF_CLI_ARGS_init='' terraform init
 
 # Provision S3 bucket and dynamodb tables
-terraform apply -auto-approve
+TF_CLI_ARGS_apply='' terraform apply -auto-approve
 
 export TF_BUCKET=$(terraform output tfstate_backend_s3_bucket_id)
 export TF_DYNAMODB_TABLE=$(terraform output tfstate_backend_dynamodb_table_id)
