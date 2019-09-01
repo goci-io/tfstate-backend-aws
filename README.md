@@ -15,3 +15,5 @@ To use this project run `make init`
 #### Verify
 
 To verify it all worked, run `aws s3 ls s3://${TF_BUCKET}/tfstate-backend/terraform.tfstate` it should display the `terraform.tfstate` file and date when it was created.
+
+You can overwrite where this module stores its state file by setting `TF_STATE_KEY` when running `make init`
