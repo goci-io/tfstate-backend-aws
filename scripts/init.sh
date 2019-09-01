@@ -20,8 +20,8 @@ export TF_BUCKET_REGION=${AWS_REGION}
 sed -Ei 's/^#(\s+backend\s+)/\1/' main.tf
 
 # Reinitialize terraform to import state to remote backend
-terraform init \
+TF_CLI_ARGS_init='' terraform init \
   -force-copy \
-  -backend-config="encrypt=true" \
-  -backend-config="bucket=${TF_BUCKET}" \
-  -backend-config="key=$1"
+  -backend-config=encrypt=true \
+  -backend-config=bucket=${TF_BUCKET} \
+  -backend-config=key=${1}
