@@ -9,11 +9,11 @@ terraform {
 
 module "label" {
   source     = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.16.0"
-  namespace     = var.namespace
-  name          = var.name
-  attributes    = var.attributes
-  tags          = var.tags
-  stage         = var.stage
+  namespace  = var.namespace
+  name       = var.name
+  attributes = var.attributes
+  tags       = var.tags
+  stage      = var.stage
 }
 
 module "tfstate_backend" {
