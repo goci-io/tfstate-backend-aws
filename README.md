@@ -17,3 +17,7 @@ To use this project run `make init`
 To verify it all worked, run `aws s3 ls s3://${TF_BUCKET}/tfstate-backend/terraform.tfstate` it should display the `terraform.tfstate` file and date when it was created.
 
 You can overwrite where this module stores its state file by setting `TF_STATE_KEY` when running `make init`
+
+### IAM
+
+It might be useful to you to generate an IAM policy which grants access to the state backend and dynamodb table. This policy can be attached to users or roles. Additionally this module exposes an output called `tfstate_backend_access_policy_json` which contains the policy document. The `tfstate_backend_access_policy_arn` output contains the created IAM policy ARN.

@@ -43,3 +43,8 @@ variable "aws_profile" {
   description = "AWS profile name as set in the shared credentials file"
 }
 
+variable "create_iam_policy" {
+  type        = bool
+  default     = false
+  description = "Creates an IAM policy to attach to users or roles to grant access to dynamodb and s3 bucket"
+}
